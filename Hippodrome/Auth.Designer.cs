@@ -82,7 +82,7 @@ namespace Hippodrome
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(309, 38);
             this.textBoxLogin.TabIndex = 3;
-            this.textBoxLogin.Text = "Client1";
+            this.textBoxLogin.Text = "admin";
             // 
             // textBoxPassword
             // 
@@ -91,7 +91,7 @@ namespace Hippodrome
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(309, 38);
             this.textBoxPassword.TabIndex = 4;
-            this.textBoxPassword.Text = "1234567";
+            this.textBoxPassword.Text = "admin";
             // 
             // Registr
             // 

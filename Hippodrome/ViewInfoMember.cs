@@ -12,8 +12,10 @@ namespace Hippodrome
         public int HorseNumber { get; set; }
         public int RiderNumber { get; set; }
         public string HorseName { get; set; }
+        public double? Coefficient { get; set; }
         public string RiderSurname { get; set; }
         public string RiderName { get; set; }
         public string RiderMiddleName { get; set; }
+        public string Master { get; set; }
     }
 }

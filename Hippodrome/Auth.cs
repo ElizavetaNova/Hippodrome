@@ -63,13 +63,13 @@ namespace Hippodrome
                 if (role == Role.Admin)
                 {
                     this.Hide();
-                    var form = new Form1();
+                    var form = new Admin(textBoxLogin.Text.Trim());
                     form.ShowDialog();
                 }
                 else if (role == Role.Client)
                 {
                     this.Hide();
-                    var form = new Account(textBoxLogin.Text);
+                    var form = new Account(textBoxLogin.Text.Trim());
                     form.ShowDialog();
                 }
             }

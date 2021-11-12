@@ -210,23 +210,11 @@ namespace Hippodrome
 
                 entity.ToView("View_BetClientHistory");
 
-                entity.Property(e => e.BetNumber)
-                    .IsRequired()
-                    .HasMaxLength(10);
-
                 entity.Property(e => e.BetSum).HasColumnType("money");
 
                 entity.Property(e => e.ClientId).HasColumnName("ClientID");
 
-                entity.Property(e => e.ClientMiddleName).HasMaxLength(20);
-
-                entity.Property(e => e.ClientName)
-                    .IsRequired()
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.ClientSurname)
-                    .IsRequired()
-                    .HasMaxLength(20);
+                entity.Property(e => e.RaceDate).HasColumnType("date");
             });
 
             modelBuilder.Entity<ViewInfoMember>(entity =>
@@ -237,19 +225,23 @@ namespace Hippodrome
 
                 entity.Property(e => e.HorseName)
                     .IsRequired()
-                    .HasMaxLength(15);
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Master)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.RaceDate).HasColumnType("date");
 
-                entity.Property(e => e.RiderMiddleName).HasMaxLength(892);
+                entity.Property(e => e.RiderMiddleName).HasMaxLength(50);
 
                 entity.Property(e => e.RiderName)
                     .IsRequired()
-                    .HasMaxLength(3);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.RiderSurname)
                     .IsRequired()
-                    .HasMaxLength(20);
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<ViewRiderHistoryRace>(entity =>
