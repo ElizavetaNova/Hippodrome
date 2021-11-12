@@ -13,6 +13,8 @@ namespace Hippodrome
 {
     public partial class Admin : Form
     {
+        string AdminLogin;
+        int ClientIDAdmin;
         hippodromeContext context = new hippodromeContext();
         public Admin()
         {
@@ -21,6 +23,7 @@ namespace Hippodrome
         public Admin(string login)
         {
             InitializeComponent();
+            AdminLogin = login;
         }
 
         private void Admin_Load(object sender, EventArgs e)
@@ -31,22 +34,30 @@ namespace Hippodrome
             dataGridViewUsers.Columns["Client"].Visible = false;
             dataGridViewUsers.AllowUserToDeleteRows = true;
             dataGridViewUsers.AllowUserToAddRows = true;
+            buttonBetClient.Visible = false;
         }
 
         private void dataGridViewUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = e.RowIndex;
-            if ((string)dataGridViewUsers[4, row].Value != "")
+            if (dataGridViewUsers[4, row].Value != null)
             {
-                int ClientIDAdmin = (int)dataGridViewUsers[4, row].Value;
+                ClientIDAdmin = (int)dataGridViewUsers[4, row].Value;
                 context.ClientTables.Load();
                 dataGridViewClient.DataSource = context.ClientTables.Where(p => p.ClientId == ClientIDAdmin).ToList();
                 dataGridViewClient.Columns["ClientID"].ReadOnly = true;
-
+                buttonBetClient.Visible = true;
             }
             else
                 MessageBox.Show("Данный пользователь не является клиентом");
             
+        }
+
+        private void buttonBetClient_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new BetsClient(ClientIDAdmin);
+            form.ShowDialog();
         }
     }
 }

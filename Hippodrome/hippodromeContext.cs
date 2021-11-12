@@ -20,6 +20,7 @@ namespace Hippodrome
         public virtual DbSet<BettingTable> BettingTables { get; set; }
         public virtual DbSet<ClientTable> ClientTables { get; set; }
         public virtual DbSet<HorseTable> HorseTables { get; set; }
+        public virtual DbSet<Logging> Loggings { get; set; }
         public virtual DbSet<MembersRaceTable> MembersRaceTables { get; set; }
         public virtual DbSet<RaceTable> RaceTables { get; set; }
         public virtual DbSet<RiderTable> RiderTables { get; set; }
@@ -123,6 +124,25 @@ namespace Hippodrome
                     .HasMaxLength(50);
             });
 
+            modelBuilder.Entity<Logging>(entity =>
+            {
+                entity.HasKey(e => e.Idaction);
+
+                entity.ToTable("Logging");
+
+                entity.Property(e => e.Idaction).HasColumnName("IDAction");
+
+                entity.Property(e => e.Action)
+                    .IsRequired()
+                    .HasMaxLength(150);
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.Login)
+                    .IsRequired()
+                    .HasMaxLength(20);
+            });
+
             modelBuilder.Entity<MembersRaceTable>(entity =>
             {
                 entity.HasKey(e => e.MembersRaceId);
@@ -190,13 +210,11 @@ namespace Hippodrome
 
                 entity.Property(e => e.Login)
                     .IsRequired()
-                    .HasMaxLength(20)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasMaxLength(30)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.Client)
                     .WithMany(p => p.Users)

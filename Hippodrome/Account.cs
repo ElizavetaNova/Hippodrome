@@ -27,6 +27,8 @@ namespace Hippodrome
 
         public Account(string login)
         {
+            loginClient = login;
+            logging("Вход в аккаунт");
             InitializeComponent();
             buttonOkPay.Visible = false;
             textBoxPassword.TextChanged += textBoxPassword_TextChanged;
@@ -86,6 +88,7 @@ namespace Hippodrome
         {
             if ((textBoxPassword.Text != "")&(textBoxPhone.Text != ""))
             {
+
                 using (var connection = new SqlConnection("Data Source=ElizavetaLaptop;Initial Catalog=hippodrome;Integrated Security=True;"))
                 {
 
@@ -98,12 +101,14 @@ namespace Hippodrome
                     commandPhone.Parameters.AddWithValue("@ClientID", ClientID);
                     using (var dataReader = command.ExecuteReader())
                     {
+                        logging("Смена пароля");
                         dataReader.Close();
                     }
                     try
                     {
                         using (var dataReader = commandPhone.ExecuteReader())
                         {
+                            logging("Смена номера телефона");
                             dataReader.Close();
                         }
                         MessageBox.Show("Данные обновлены");
@@ -151,6 +156,7 @@ namespace Hippodrome
                     using (var dataReader = command.ExecuteReader())
                     {
                         dataReader.Close();
+                        logging("Пополнение счета");
                         MessageBox.Show("Баланс пополнен");
                     }
                     var commandMoney = new SqlCommand("SELECT AccountMoney FROM Client_table WHERE ClientID=@ClientID", connection);
@@ -308,6 +314,7 @@ namespace Hippodrome
         {
             if (textBox1.Text != "")
             {
+                logging("Подтверждение ставки");
                 using (var connection = new SqlConnection("Data Source=ElizavetaLaptop;Initial Catalog=hippodrome;Integrated Security=True;"))
                 {
 
@@ -341,6 +348,17 @@ namespace Hippodrome
             }
             else
                 MessageBox.Show("Введите сумму ставки");
+        }
+
+        public void logging(string action)
+        {
+            using (hippodromeContext context = new hippodromeContext())
+            {
+                Logging log = new Logging()
+                { Login = loginClient, Action = action, Date = DateTime.Parse(DateTime.Now.ToLongTimeString()) };
+                context.Loggings.Add(log);
+                context.SaveChanges();
+            }
         }
     }
 }

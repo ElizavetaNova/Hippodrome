@@ -55,7 +55,6 @@ namespace Hippodrome
             this.textBoxMidleName.Name = "textBoxMidleName";
             this.textBoxMidleName.Size = new System.Drawing.Size(270, 30);
             this.textBoxMidleName.TabIndex = 29;
-            this.textBoxMidleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSurname_KeyPress);
             // 
             // textBoxName
             // 
