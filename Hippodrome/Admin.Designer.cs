@@ -31,16 +31,23 @@ namespace Hippodrome
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridViewNo = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxrole = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxlogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.buttonBetClient = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewClient = new System.Windows.Forms.DataGridView();
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -49,14 +56,9 @@ namespace Hippodrome
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonBetClient = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNo)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
@@ -81,10 +83,11 @@ namespace Hippodrome
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridViewNo);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.textBoxrole);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.textBoxPassword);
             this.tabPage1.Controls.Add(this.textBoxlogin);
@@ -98,6 +101,16 @@ namespace Hippodrome
             this.tabPage1.Text = "Акаунт";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewNo
+            // 
+            this.dataGridViewNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNo.Location = new System.Drawing.Point(11, 258);
+            this.dataGridViewNo.Name = "dataGridViewNo";
+            this.dataGridViewNo.RowHeadersWidth = 51;
+            this.dataGridViewNo.RowTemplate.Height = 29;
+            this.dataGridViewNo.Size = new System.Drawing.Size(300, 40);
+            this.dataGridViewNo.TabIndex = 22;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(11, 175);
@@ -106,6 +119,7 @@ namespace Hippodrome
             this.button3.TabIndex = 21;
             this.button3.Text = "Сохранить изменения";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -115,6 +129,7 @@ namespace Hippodrome
             this.button2.TabIndex = 20;
             this.button2.Text = "Выход";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -124,14 +139,15 @@ namespace Hippodrome
             this.button1.TabIndex = 19;
             this.button1.Text = "Сменить пользователя";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxrole
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(66, 30);
-            this.textBox1.TabIndex = 18;
+            this.textBoxrole.Location = new System.Drawing.Point(119, 118);
+            this.textBoxrole.Name = "textBoxrole";
+            this.textBoxrole.ReadOnly = true;
+            this.textBoxrole.Size = new System.Drawing.Size(66, 30);
+            this.textBoxrole.TabIndex = 18;
             // 
             // label3
             // 
@@ -194,6 +210,61 @@ namespace Hippodrome
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Пользователи";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(8, 427);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(229, 42);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Удалить пользователя";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(465, 383);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(332, 40);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Добавить пользователя (клиент)";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(465, 429);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(332, 40);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Добавить пользователя (admin)";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(8, 383);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(229, 40);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Сохранить изменения";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // buttonBetClient
+            // 
+            this.buttonBetClient.Location = new System.Drawing.Point(274, 395);
+            this.buttonBetClient.Name = "buttonBetClient";
+            this.buttonBetClient.Size = new System.Drawing.Size(157, 61);
+            this.buttonBetClient.TabIndex = 3;
+            this.buttonBetClient.Text = "Ставки клиента";
+            this.buttonBetClient.UseVisualStyleBackColor = true;
+            this.buttonBetClient.Click += new System.EventHandler(this.buttonBetClient_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 249);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(232, 24);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Информация о клиенте";
             // 
             // dataGridViewClient
             // 
@@ -276,61 +347,6 @@ namespace Hippodrome
             this.tabPage4.Text = "Всадники";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 249);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 24);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Информация о клиенте";
-            // 
-            // buttonBetClient
-            // 
-            this.buttonBetClient.Location = new System.Drawing.Point(274, 395);
-            this.buttonBetClient.Name = "buttonBetClient";
-            this.buttonBetClient.Size = new System.Drawing.Size(157, 61);
-            this.buttonBetClient.TabIndex = 3;
-            this.buttonBetClient.Text = "Ставки клиента";
-            this.buttonBetClient.UseVisualStyleBackColor = true;
-            this.buttonBetClient.Click += new System.EventHandler(this.buttonBetClient_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(8, 383);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(229, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Сохранить изменения";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(465, 429);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(332, 40);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Добавить пользователя (admin)";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(465, 383);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(332, 40);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Добавить пользователя (клиент)";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(8, 427);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(229, 42);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Удалить пользователя";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -344,6 +360,7 @@ namespace Hippodrome
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNo)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).EndInit();
@@ -363,7 +380,7 @@ namespace Hippodrome
         private System.Windows.Forms.TextBox textBoxlogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxrole;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView dataGridViewClient;
@@ -383,5 +400,6 @@ namespace Hippodrome
         private System.Windows.Forms.Button buttonBetClient;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridViewNo;
     }
 }
