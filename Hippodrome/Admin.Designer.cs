@@ -42,20 +42,42 @@ namespace Hippodrome
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonSaveUser = new System.Windows.Forms.Button();
+            this.textBoxPasswordNewUser = new System.Windows.Forms.TextBox();
+            this.textBoxloginNewUser = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonDeleteUserClient = new System.Windows.Forms.Button();
+            this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.buttonBetClient = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewClient = new System.Windows.Forms.DataGridView();
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonDeleteRace = new System.Windows.Forms.Button();
+            this.buttonSaveRaceChange = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridViewMembersRace = new System.Windows.Forms.DataGridView();
+            this.buttonAddRace = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridViewRace = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridViewUpRace = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMemHorse = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMemRider = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.labelRaceNumber = new System.Windows.Forms.Label();
+            this.labelHorseNumber = new System.Windows.Forms.Label();
+            this.labelRiderID = new System.Windows.Forms.Label();
+            this.buttonAddMem = new System.Windows.Forms.Button();
+            this.dataGridViewMemRace = new System.Windows.Forms.DataGridView();
+            this.buttonDeleteMem = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNo)).BeginInit();
@@ -63,8 +85,13 @@ namespace Hippodrome
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMembersRace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRace)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpRace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemHorse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRace)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,7 +105,7 @@ namespace Hippodrome
             this.tabControl1.Location = new System.Drawing.Point(4, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(811, 526);
+            this.tabControl1.Size = new System.Drawing.Size(817, 640);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -96,7 +123,7 @@ namespace Hippodrome
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(803, 489);
+            this.tabPage1.Size = new System.Drawing.Size(809, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Акаунт";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -196,62 +223,101 @@ namespace Hippodrome
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button7);
-            this.tabPage5.Controls.Add(this.button6);
-            this.tabPage5.Controls.Add(this.button4);
-            this.tabPage5.Controls.Add(this.button5);
+            this.tabPage5.Controls.Add(this.buttonSaveUser);
+            this.tabPage5.Controls.Add(this.textBoxPasswordNewUser);
+            this.tabPage5.Controls.Add(this.textBoxloginNewUser);
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Controls.Add(this.label6);
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Controls.Add(this.buttonDeleteUserClient);
+            this.tabPage5.Controls.Add(this.buttonSaveChanges);
             this.tabPage5.Controls.Add(this.buttonBetClient);
             this.tabPage5.Controls.Add(this.label4);
             this.tabPage5.Controls.Add(this.dataGridViewClient);
             this.tabPage5.Controls.Add(this.dataGridViewUsers);
             this.tabPage5.Location = new System.Drawing.Point(4, 33);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(803, 489);
+            this.tabPage5.Size = new System.Drawing.Size(809, 603);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Пользователи";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // buttonSaveUser
             // 
-            this.button7.Location = new System.Drawing.Point(8, 427);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(229, 42);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Удалить пользователя";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonSaveUser.Location = new System.Drawing.Point(293, 493);
+            this.buttonSaveUser.Name = "buttonSaveUser";
+            this.buttonSaveUser.Size = new System.Drawing.Size(148, 63);
+            this.buttonSaveUser.TabIndex = 13;
+            this.buttonSaveUser.Text = "Сохранить пользователя";
+            this.buttonSaveUser.UseVisualStyleBackColor = true;
+            this.buttonSaveUser.Click += new System.EventHandler(this.buttonSaveUser_Click);
             // 
-            // button6
+            // textBoxPasswordNewUser
             // 
-            this.button6.Location = new System.Drawing.Point(465, 383);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(332, 40);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Добавить пользователя (клиент)";
-            this.button6.UseVisualStyleBackColor = true;
+            this.textBoxPasswordNewUser.Location = new System.Drawing.Point(94, 529);
+            this.textBoxPasswordNewUser.Name = "textBoxPasswordNewUser";
+            this.textBoxPasswordNewUser.Size = new System.Drawing.Size(165, 30);
+            this.textBoxPasswordNewUser.TabIndex = 12;
             // 
-            // button4
+            // textBoxloginNewUser
             // 
-            this.button4.Location = new System.Drawing.Point(465, 429);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(332, 40);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Добавить пользователя (admin)";
-            this.button4.UseVisualStyleBackColor = true;
+            this.textBoxloginNewUser.Location = new System.Drawing.Point(94, 489);
+            this.textBoxloginNewUser.Name = "textBoxloginNewUser";
+            this.textBoxloginNewUser.Size = new System.Drawing.Size(165, 30);
+            this.textBoxloginNewUser.TabIndex = 11;
             // 
-            // button5
+            // label7
             // 
-            this.button5.Location = new System.Drawing.Point(8, 383);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(229, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Сохранить изменения";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 532);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 24);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Пароль";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 495);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 24);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Логин";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 456);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(205, 24);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Новый пользователь";
+            // 
+            // buttonDeleteUserClient
+            // 
+            this.buttonDeleteUserClient.Location = new System.Drawing.Point(302, 383);
+            this.buttonDeleteUserClient.Name = "buttonDeleteUserClient";
+            this.buttonDeleteUserClient.Size = new System.Drawing.Size(229, 42);
+            this.buttonDeleteUserClient.TabIndex = 7;
+            this.buttonDeleteUserClient.Text = "Удалить пользователя";
+            this.buttonDeleteUserClient.UseVisualStyleBackColor = true;
+            this.buttonDeleteUserClient.Click += new System.EventHandler(this.buttonDeleteUserClient_Click);
+            // 
+            // buttonSaveChanges
+            // 
+            this.buttonSaveChanges.Location = new System.Drawing.Point(8, 383);
+            this.buttonSaveChanges.Name = "buttonSaveChanges";
+            this.buttonSaveChanges.Size = new System.Drawing.Size(229, 40);
+            this.buttonSaveChanges.TabIndex = 4;
+            this.buttonSaveChanges.Text = "Сохранить изменения";
+            this.buttonSaveChanges.UseVisualStyleBackColor = true;
+            this.buttonSaveChanges.Click += new System.EventHandler(this.buttonSaveChanges_Click);
             // 
             // buttonBetClient
             // 
-            this.buttonBetClient.Location = new System.Drawing.Point(274, 395);
+            this.buttonBetClient.Location = new System.Drawing.Point(599, 383);
             this.buttonBetClient.Name = "buttonBetClient";
-            this.buttonBetClient.Size = new System.Drawing.Size(157, 61);
+            this.buttonBetClient.Size = new System.Drawing.Size(201, 40);
             this.buttonBetClient.TabIndex = 3;
             this.buttonBetClient.Text = "Ставки клиента";
             this.buttonBetClient.UseVisualStyleBackColor = true;
@@ -278,53 +344,136 @@ namespace Hippodrome
             // 
             // dataGridViewUsers
             // 
+            this.dataGridViewUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsers.Location = new System.Drawing.Point(8, 3);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.RowHeadersVisible = false;
             this.dataGridViewUsers.RowHeadersWidth = 51;
             this.dataGridViewUsers.RowTemplate.Height = 29;
             this.dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUsers.Size = new System.Drawing.Size(792, 227);
             this.dataGridViewUsers.TabIndex = 0;
+            this.dataGridViewUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellDoubleClick);
             this.dataGridViewUsers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellDoubleClick);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.buttonDeleteRace);
+            this.tabPage2.Controls.Add(this.buttonSaveRaceChange);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.dataGridViewMembersRace);
+            this.tabPage2.Controls.Add(this.buttonAddRace);
+            this.tabPage2.Controls.Add(this.dateTimePicker1);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.dataGridViewRace);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(803, 489);
+            this.tabPage2.Size = new System.Drawing.Size(809, 603);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Заезды";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // buttonDeleteRace
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(5, 227);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(792, 259);
-            this.dataGridView2.TabIndex = 1;
+            this.buttonDeleteRace.Location = new System.Drawing.Point(622, 220);
+            this.buttonDeleteRace.Name = "buttonDeleteRace";
+            this.buttonDeleteRace.Size = new System.Drawing.Size(165, 56);
+            this.buttonDeleteRace.TabIndex = 7;
+            this.buttonDeleteRace.Text = "Удалить заезд";
+            this.buttonDeleteRace.UseVisualStyleBackColor = true;
+            this.buttonDeleteRace.Click += new System.EventHandler(this.buttonDeleteRace_Click);
             // 
-            // dataGridView1
+            // buttonSaveRaceChange
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(792, 216);
-            this.dataGridView1.TabIndex = 0;
+            this.buttonSaveRaceChange.Location = new System.Drawing.Point(622, 139);
+            this.buttonSaveRaceChange.Name = "buttonSaveRaceChange";
+            this.buttonSaveRaceChange.Size = new System.Drawing.Size(165, 56);
+            this.buttonSaveRaceChange.TabIndex = 6;
+            this.buttonSaveRaceChange.Text = "Сохранить изменения";
+            this.buttonSaveRaceChange.UseVisualStyleBackColor = true;
+            this.buttonSaveRaceChange.Click += new System.EventHandler(this.buttonSaveRaceChange_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(5, 356);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(173, 24);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Участники заезда";
+            // 
+            // dataGridViewMembersRace
+            // 
+            this.dataGridViewMembersRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMembersRace.Location = new System.Drawing.Point(5, 383);
+            this.dataGridViewMembersRace.Name = "dataGridViewMembersRace";
+            this.dataGridViewMembersRace.RowHeadersWidth = 51;
+            this.dataGridViewMembersRace.RowTemplate.Height = 29;
+            this.dataGridViewMembersRace.Size = new System.Drawing.Size(795, 188);
+            this.dataGridViewMembersRace.TabIndex = 4;
+            // 
+            // buttonAddRace
+            // 
+            this.buttonAddRace.Location = new System.Drawing.Point(622, 67);
+            this.buttonAddRace.Name = "buttonAddRace";
+            this.buttonAddRace.Size = new System.Drawing.Size(165, 42);
+            this.buttonAddRace.TabIndex = 3;
+            this.buttonAddRace.Text = "Добавить заезд";
+            this.buttonAddRace.UseVisualStyleBackColor = true;
+            this.buttonAddRace.Click += new System.EventHandler(this.buttonAddRace_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(622, 31);
+            this.dateTimePicker1.MinDate = new System.DateTime(2021, 11, 13, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(165, 30);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(601, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(186, 24);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Дата нового заезда";
+            // 
+            // dataGridViewRace
+            // 
+            this.dataGridViewRace.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRace.Location = new System.Drawing.Point(5, 4);
+            this.dataGridViewRace.Name = "dataGridViewRace";
+            this.dataGridViewRace.RowHeadersVisible = false;
+            this.dataGridViewRace.RowHeadersWidth = 51;
+            this.dataGridViewRace.RowTemplate.Height = 29;
+            this.dataGridViewRace.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewRace.Size = new System.Drawing.Size(490, 322);
+            this.dataGridViewRace.TabIndex = 0;
+            this.dataGridViewRace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRace_CellClick);
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.buttonDeleteMem);
+            this.tabPage6.Controls.Add(this.dataGridViewMemRace);
+            this.tabPage6.Controls.Add(this.buttonAddMem);
+            this.tabPage6.Controls.Add(this.labelRiderID);
+            this.tabPage6.Controls.Add(this.labelHorseNumber);
+            this.tabPage6.Controls.Add(this.labelRaceNumber);
+            this.tabPage6.Controls.Add(this.label12);
+            this.tabPage6.Controls.Add(this.label11);
+            this.tabPage6.Controls.Add(this.label10);
+            this.tabPage6.Controls.Add(this.dataGridViewMemRider);
+            this.tabPage6.Controls.Add(this.dataGridViewMemHorse);
+            this.tabPage6.Controls.Add(this.dataGridViewUpRace);
             this.tabPage6.Location = new System.Drawing.Point(4, 33);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(803, 489);
+            this.tabPage6.Size = new System.Drawing.Size(809, 603);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Участники заездов";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -333,7 +482,7 @@ namespace Hippodrome
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(803, 489);
+            this.tabPage3.Size = new System.Drawing.Size(809, 603);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Лошади";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -342,16 +491,128 @@ namespace Hippodrome
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 33);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(803, 489);
+            this.tabPage4.Size = new System.Drawing.Size(809, 603);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Всадники";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewUpRace
+            // 
+            this.dataGridViewUpRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUpRace.Location = new System.Drawing.Point(4, 20);
+            this.dataGridViewUpRace.Name = "dataGridViewUpRace";
+            this.dataGridViewUpRace.RowHeadersWidth = 51;
+            this.dataGridViewUpRace.RowTemplate.Height = 29;
+            this.dataGridViewUpRace.Size = new System.Drawing.Size(237, 188);
+            this.dataGridViewUpRace.TabIndex = 0;
+            // 
+            // dataGridViewMemHorse
+            // 
+            this.dataGridViewMemHorse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMemHorse.Location = new System.Drawing.Point(247, 20);
+            this.dataGridViewMemHorse.Name = "dataGridViewMemHorse";
+            this.dataGridViewMemHorse.RowHeadersWidth = 51;
+            this.dataGridViewMemHorse.RowTemplate.Height = 29;
+            this.dataGridViewMemHorse.Size = new System.Drawing.Size(259, 188);
+            this.dataGridViewMemHorse.TabIndex = 1;
+            // 
+            // dataGridViewMemRider
+            // 
+            this.dataGridViewMemRider.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMemRider.Location = new System.Drawing.Point(512, 20);
+            this.dataGridViewMemRider.Name = "dataGridViewMemRider";
+            this.dataGridViewMemRider.RowHeadersWidth = 51;
+            this.dataGridViewMemRider.RowTemplate.Height = 29;
+            this.dataGridViewMemRider.Size = new System.Drawing.Size(288, 188);
+            this.dataGridViewMemRider.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(40, 229);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(136, 24);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Номер заезда";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(295, 229);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 24);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Номер лошади";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(580, 229);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(162, 24);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Номер всадника";
+            // 
+            // labelRaceNumber
+            // 
+            this.labelRaceNumber.AutoSize = true;
+            this.labelRaceNumber.Location = new System.Drawing.Point(18, 253);
+            this.labelRaceNumber.Name = "labelRaceNumber";
+            this.labelRaceNumber.Size = new System.Drawing.Size(196, 24);
+            this.labelRaceNumber.TabIndex = 6;
+            this.labelRaceNumber.Text = "*клик на таблицу 1*";
+            // 
+            // labelHorseNumber
+            // 
+            this.labelHorseNumber.AutoSize = true;
+            this.labelHorseNumber.Location = new System.Drawing.Point(274, 257);
+            this.labelHorseNumber.Name = "labelHorseNumber";
+            this.labelHorseNumber.Size = new System.Drawing.Size(198, 24);
+            this.labelHorseNumber.TabIndex = 7;
+            this.labelHorseNumber.Text = "*клик на таблицу 2*";
+            // 
+            // labelRiderID
+            // 
+            this.labelRiderID.AutoSize = true;
+            this.labelRiderID.Location = new System.Drawing.Point(569, 257);
+            this.labelRiderID.Name = "labelRiderID";
+            this.labelRiderID.Size = new System.Drawing.Size(198, 24);
+            this.labelRiderID.TabIndex = 8;
+            this.labelRiderID.Text = "*клик на таблицу 3*";
+            // 
+            // buttonAddMem
+            // 
+            this.buttonAddMem.Location = new System.Drawing.Point(569, 296);
+            this.buttonAddMem.Name = "buttonAddMem";
+            this.buttonAddMem.Size = new System.Drawing.Size(220, 35);
+            this.buttonAddMem.TabIndex = 9;
+            this.buttonAddMem.Text = "Добавить участника";
+            this.buttonAddMem.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewMemRace
+            // 
+            this.dataGridViewMemRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMemRace.Location = new System.Drawing.Point(4, 337);
+            this.dataGridViewMemRace.Name = "dataGridViewMemRace";
+            this.dataGridViewMemRace.RowHeadersWidth = 51;
+            this.dataGridViewMemRace.RowTemplate.Height = 29;
+            this.dataGridViewMemRace.Size = new System.Drawing.Size(785, 183);
+            this.dataGridViewMemRace.TabIndex = 10;
+            // 
+            // buttonDeleteMem
+            // 
+            this.buttonDeleteMem.Location = new System.Drawing.Point(580, 536);
+            this.buttonDeleteMem.Name = "buttonDeleteMem";
+            this.buttonDeleteMem.Size = new System.Drawing.Size(209, 29);
+            this.buttonDeleteMem.TabIndex = 11;
+            this.buttonDeleteMem.Text = "Удалить участника";
+            this.buttonDeleteMem.UseVisualStyleBackColor = true;
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 544);
+            this.ClientSize = new System.Drawing.Size(820, 658);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Admin";
@@ -366,8 +627,15 @@ namespace Hippodrome
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMembersRace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRace)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpRace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemHorse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRace)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -386,7 +654,6 @@ namespace Hippodrome
         private System.Windows.Forms.DataGridView dataGridViewClient;
         private System.Windows.Forms.DataGridView dataGridViewUsers;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage3;
@@ -394,12 +661,36 @@ namespace Hippodrome
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonSaveChanges;
         private System.Windows.Forms.Button buttonBetClient;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonDeleteUserClient;
         private System.Windows.Forms.DataGridView dataGridViewNo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonSaveUser;
+        private System.Windows.Forms.TextBox textBoxPasswordNewUser;
+        private System.Windows.Forms.TextBox textBoxloginNewUser;
+        private System.Windows.Forms.DataGridView dataGridViewRace;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonAddRace;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridViewMembersRace;
+        private System.Windows.Forms.Button buttonDeleteRace;
+        private System.Windows.Forms.Button buttonSaveRaceChange;
+        private System.Windows.Forms.Button buttonDeleteMem;
+        private System.Windows.Forms.DataGridView dataGridViewMemRace;
+        private System.Windows.Forms.Button buttonAddMem;
+        private System.Windows.Forms.Label labelRiderID;
+        private System.Windows.Forms.Label labelHorseNumber;
+        private System.Windows.Forms.Label labelRaceNumber;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dataGridViewMemRider;
+        private System.Windows.Forms.DataGridView dataGridViewMemHorse;
+        private System.Windows.Forms.DataGridView dataGridViewUpRace;
     }
 }

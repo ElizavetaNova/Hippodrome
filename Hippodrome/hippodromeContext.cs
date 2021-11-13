@@ -25,6 +25,7 @@ namespace Hippodrome
         public virtual DbSet<RaceTable> RaceTables { get; set; }
         public virtual DbSet<RiderTable> RiderTables { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Usersold> Usersolds { get; set; }
         public virtual DbSet<ViewBetClientHistory> ViewBetClientHistories { get; set; }
         public virtual DbSet<ViewInfoMember> ViewInfoMembers { get; set; }
         public virtual DbSet<ViewRiderHistoryRace> ViewRiderHistoryRaces { get; set; }
@@ -219,7 +220,27 @@ namespace Hippodrome
                 entity.HasOne(d => d.Client)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.ClientId)
-                    .HasConstraintName("FK_Users_Client_table");
+                    .HasConstraintName("FK_User_Client_table");
+            });
+
+            modelBuilder.Entity<Usersold>(entity =>
+            {
+                entity.HasKey(e => e.UserId)
+                    .HasName("PK_Users");
+
+                entity.ToTable("Usersold");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.Property(e => e.ClientId).HasColumnName("ClientID");
+
+                entity.Property(e => e.Login)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<ViewBetClientHistory>(entity =>

@@ -17,14 +17,16 @@ namespace Hippodrome
         string conect = "Data Source=ElizavetaLaptop;Initial Catalog=hippodrome;Integrated Security=True;";
         int ClientIDAdmin;
         int BetNumberDelete;
+        string LoginAdmin;
         hippodromeContext context = new hippodromeContext();
         public BetsClient()
         {
             
         }
-        public BetsClient(int clientIDAdmin)
+        public BetsClient(int clientIDAdmin, string loginAdmin)
         {
             ClientIDAdmin = clientIDAdmin;
+            LoginAdmin = loginAdmin;
             InitializeComponent();
         }
 
@@ -60,10 +62,11 @@ namespace Hippodrome
         }
 
         private void buttonCancelBet_Click(object sender, EventArgs e)
-        {
+        {            
             DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить ставку номер"+BetNumberDelete, "Удаление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                logging("Отмена ставки");
                 using (var connection = new SqlConnection(conect))
                 {
                     connection.Open();
@@ -79,6 +82,22 @@ namespace Hippodrome
             else
                 buttonCancelBet.Visible = false;
 
+        }
+        public void logging(string action)
+        {
+            using (hippodromeContext context = new hippodromeContext())
+            {
+                Logging log = new Logging()
+                { Login = LoginAdmin, Action = action, Date = DateTime.Parse(DateTime.Now.ToLongTimeString()) };
+                context.Loggings.Add(log);
+                context.SaveChanges();
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var admin = new Admin(LoginAdmin);            
+            admin.ShowDialog();
         }
     }
 }
