@@ -202,7 +202,6 @@ namespace Hippodrome
         {
             using (var connection = new SqlConnection("Data Source=ElizavetaLaptop;Initial Catalog=hippodrome;Integrated Security=True;"))
             {
-
                 connection.Open();
                 var commandActiveBet = new SqlCommand("exec BetAccepted @ClientID", connection);
 

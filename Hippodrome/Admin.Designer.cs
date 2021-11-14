@@ -29,7 +29,7 @@ namespace Hippodrome
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlMem = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewNo = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
@@ -64,21 +64,21 @@ namespace Hippodrome
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridViewRace = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.buttonDeleteMem = new System.Windows.Forms.Button();
+            this.dataGridViewMemRace = new System.Windows.Forms.DataGridView();
+            this.buttonAddMem = new System.Windows.Forms.Button();
+            this.labelRiderID = new System.Windows.Forms.Label();
+            this.labelHorseNumber = new System.Windows.Forms.Label();
+            this.labelRaceNumber = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridViewMemRider = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMemHorse = new System.Windows.Forms.DataGridView();
+            this.dataGridViewUpRace = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridViewUpRace = new System.Windows.Forms.DataGridView();
-            this.dataGridViewMemHorse = new System.Windows.Forms.DataGridView();
-            this.dataGridViewMemRider = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.labelRaceNumber = new System.Windows.Forms.Label();
-            this.labelHorseNumber = new System.Windows.Forms.Label();
-            this.labelRiderID = new System.Windows.Forms.Label();
-            this.buttonAddMem = new System.Windows.Forms.Button();
-            this.dataGridViewMemRace = new System.Windows.Forms.DataGridView();
-            this.buttonDeleteMem = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
+            this.tabControlMem.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNo)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -88,25 +88,26 @@ namespace Hippodrome
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMembersRace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRace)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpRace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemHorse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemHorse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpRace)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlMem
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(4, 13);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(817, 640);
-            this.tabControl1.TabIndex = 0;
+            this.tabControlMem.Controls.Add(this.tabPage1);
+            this.tabControlMem.Controls.Add(this.tabPage5);
+            this.tabControlMem.Controls.Add(this.tabPage2);
+            this.tabControlMem.Controls.Add(this.tabPage6);
+            this.tabControlMem.Controls.Add(this.tabPage3);
+            this.tabControlMem.Controls.Add(this.tabPage4);
+            this.tabControlMem.Location = new System.Drawing.Point(4, 13);
+            this.tabControlMem.Name = "tabControlMem";
+            this.tabControlMem.SelectedIndex = 0;
+            this.tabControlMem.Size = new System.Drawing.Size(817, 640);
+            this.tabControlMem.TabIndex = 0;
+            this.tabControlMem.Layout += new System.Windows.Forms.LayoutEventHandler(this.tabControlMem_Layout);
             // 
             // tabPage1
             // 
@@ -478,6 +479,147 @@ namespace Hippodrome
             this.tabPage6.Text = "Участники заездов";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // buttonDeleteMem
+            // 
+            this.buttonDeleteMem.Location = new System.Drawing.Point(591, 540);
+            this.buttonDeleteMem.Name = "buttonDeleteMem";
+            this.buttonDeleteMem.Size = new System.Drawing.Size(209, 36);
+            this.buttonDeleteMem.TabIndex = 11;
+            this.buttonDeleteMem.Text = "Удалить участника";
+            this.buttonDeleteMem.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewMemRace
+            // 
+            this.dataGridViewMemRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMemRace.Location = new System.Drawing.Point(4, 337);
+            this.dataGridViewMemRace.Name = "dataGridViewMemRace";
+            this.dataGridViewMemRace.RowHeadersWidth = 51;
+            this.dataGridViewMemRace.RowTemplate.Height = 29;
+            this.dataGridViewMemRace.Size = new System.Drawing.Size(792, 197);
+            this.dataGridViewMemRace.TabIndex = 10;
+            // 
+            // buttonAddMem
+            // 
+            this.buttonAddMem.Location = new System.Drawing.Point(405, 272);
+            this.buttonAddMem.Name = "buttonAddMem";
+            this.buttonAddMem.Size = new System.Drawing.Size(220, 35);
+            this.buttonAddMem.TabIndex = 9;
+            this.buttonAddMem.Text = "Добавить участника";
+            this.buttonAddMem.UseVisualStyleBackColor = true;
+            this.buttonAddMem.Click += new System.EventHandler(this.buttonAddMem_Click);
+            // 
+            // labelRiderID
+            // 
+            this.labelRiderID.AutoSize = true;
+            this.labelRiderID.Location = new System.Drawing.Point(188, 301);
+            this.labelRiderID.Name = "labelRiderID";
+            this.labelRiderID.Size = new System.Drawing.Size(198, 24);
+            this.labelRiderID.TabIndex = 8;
+            this.labelRiderID.Text = "*клик на таблицу 3*";
+            // 
+            // labelHorseNumber
+            // 
+            this.labelHorseNumber.AutoSize = true;
+            this.labelHorseNumber.Location = new System.Drawing.Point(188, 277);
+            this.labelHorseNumber.Name = "labelHorseNumber";
+            this.labelHorseNumber.Size = new System.Drawing.Size(198, 24);
+            this.labelHorseNumber.TabIndex = 7;
+            this.labelHorseNumber.Text = "*клик на таблицу 2*";
+            // 
+            // labelRaceNumber
+            // 
+            this.labelRaceNumber.AutoSize = true;
+            this.labelRaceNumber.Location = new System.Drawing.Point(188, 253);
+            this.labelRaceNumber.Name = "labelRaceNumber";
+            this.labelRaceNumber.Size = new System.Drawing.Size(196, 24);
+            this.labelRaceNumber.TabIndex = 6;
+            this.labelRaceNumber.Text = "*клик на таблицу 1*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 301);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(162, 24);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Номер всадника";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 277);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 24);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Номер лошади";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 253);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(136, 24);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Номер заезда";
+            // 
+            // dataGridViewMemRider
+            // 
+            this.dataGridViewMemRider.AllowUserToAddRows = false;
+            this.dataGridViewMemRider.AllowUserToDeleteRows = false;
+            this.dataGridViewMemRider.AllowUserToResizeColumns = false;
+            this.dataGridViewMemRider.AllowUserToResizeRows = false;
+            this.dataGridViewMemRider.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewMemRider.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMemRider.Location = new System.Drawing.Point(512, 20);
+            this.dataGridViewMemRider.Name = "dataGridViewMemRider";
+            this.dataGridViewMemRider.ReadOnly = true;
+            this.dataGridViewMemRider.RowHeadersVisible = false;
+            this.dataGridViewMemRider.RowHeadersWidth = 51;
+            this.dataGridViewMemRider.RowTemplate.Height = 29;
+            this.dataGridViewMemRider.Size = new System.Drawing.Size(288, 223);
+            this.dataGridViewMemRider.TabIndex = 2;
+            this.dataGridViewMemRider.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMemRider_CellClick);
+            // 
+            // dataGridViewMemHorse
+            // 
+            this.dataGridViewMemHorse.AllowUserToAddRows = false;
+            this.dataGridViewMemHorse.AllowUserToDeleteRows = false;
+            this.dataGridViewMemHorse.AllowUserToResizeColumns = false;
+            this.dataGridViewMemHorse.AllowUserToResizeRows = false;
+            this.dataGridViewMemHorse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewMemHorse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMemHorse.Location = new System.Drawing.Point(247, 20);
+            this.dataGridViewMemHorse.Name = "dataGridViewMemHorse";
+            this.dataGridViewMemHorse.ReadOnly = true;
+            this.dataGridViewMemHorse.RowHeadersVisible = false;
+            this.dataGridViewMemHorse.RowHeadersWidth = 51;
+            this.dataGridViewMemHorse.RowTemplate.Height = 29;
+            this.dataGridViewMemHorse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMemHorse.Size = new System.Drawing.Size(259, 223);
+            this.dataGridViewMemHorse.TabIndex = 1;
+            this.dataGridViewMemHorse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMemHorse_CellClick);
+            // 
+            // dataGridViewUpRace
+            // 
+            this.dataGridViewUpRace.AllowUserToAddRows = false;
+            this.dataGridViewUpRace.AllowUserToDeleteRows = false;
+            this.dataGridViewUpRace.AllowUserToResizeColumns = false;
+            this.dataGridViewUpRace.AllowUserToResizeRows = false;
+            this.dataGridViewUpRace.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewUpRace.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewUpRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUpRace.Location = new System.Drawing.Point(4, 20);
+            this.dataGridViewUpRace.MultiSelect = false;
+            this.dataGridViewUpRace.Name = "dataGridViewUpRace";
+            this.dataGridViewUpRace.ReadOnly = true;
+            this.dataGridViewUpRace.RowHeadersVisible = false;
+            this.dataGridViewUpRace.RowHeadersWidth = 51;
+            this.dataGridViewUpRace.RowTemplate.Height = 29;
+            this.dataGridViewUpRace.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUpRace.Size = new System.Drawing.Size(237, 223);
+            this.dataGridViewUpRace.TabIndex = 0;
+            this.dataGridViewUpRace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUpRace_CellClick);
+            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
@@ -496,129 +638,17 @@ namespace Hippodrome
             this.tabPage4.Text = "Всадники";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewUpRace
-            // 
-            this.dataGridViewUpRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUpRace.Location = new System.Drawing.Point(4, 20);
-            this.dataGridViewUpRace.Name = "dataGridViewUpRace";
-            this.dataGridViewUpRace.RowHeadersWidth = 51;
-            this.dataGridViewUpRace.RowTemplate.Height = 29;
-            this.dataGridViewUpRace.Size = new System.Drawing.Size(237, 188);
-            this.dataGridViewUpRace.TabIndex = 0;
-            // 
-            // dataGridViewMemHorse
-            // 
-            this.dataGridViewMemHorse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMemHorse.Location = new System.Drawing.Point(247, 20);
-            this.dataGridViewMemHorse.Name = "dataGridViewMemHorse";
-            this.dataGridViewMemHorse.RowHeadersWidth = 51;
-            this.dataGridViewMemHorse.RowTemplate.Height = 29;
-            this.dataGridViewMemHorse.Size = new System.Drawing.Size(259, 188);
-            this.dataGridViewMemHorse.TabIndex = 1;
-            // 
-            // dataGridViewMemRider
-            // 
-            this.dataGridViewMemRider.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMemRider.Location = new System.Drawing.Point(512, 20);
-            this.dataGridViewMemRider.Name = "dataGridViewMemRider";
-            this.dataGridViewMemRider.RowHeadersWidth = 51;
-            this.dataGridViewMemRider.RowTemplate.Height = 29;
-            this.dataGridViewMemRider.Size = new System.Drawing.Size(288, 188);
-            this.dataGridViewMemRider.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(40, 229);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(136, 24);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Номер заезда";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(295, 229);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(150, 24);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Номер лошади";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(580, 229);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(162, 24);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Номер всадника";
-            // 
-            // labelRaceNumber
-            // 
-            this.labelRaceNumber.AutoSize = true;
-            this.labelRaceNumber.Location = new System.Drawing.Point(18, 253);
-            this.labelRaceNumber.Name = "labelRaceNumber";
-            this.labelRaceNumber.Size = new System.Drawing.Size(196, 24);
-            this.labelRaceNumber.TabIndex = 6;
-            this.labelRaceNumber.Text = "*клик на таблицу 1*";
-            // 
-            // labelHorseNumber
-            // 
-            this.labelHorseNumber.AutoSize = true;
-            this.labelHorseNumber.Location = new System.Drawing.Point(274, 257);
-            this.labelHorseNumber.Name = "labelHorseNumber";
-            this.labelHorseNumber.Size = new System.Drawing.Size(198, 24);
-            this.labelHorseNumber.TabIndex = 7;
-            this.labelHorseNumber.Text = "*клик на таблицу 2*";
-            // 
-            // labelRiderID
-            // 
-            this.labelRiderID.AutoSize = true;
-            this.labelRiderID.Location = new System.Drawing.Point(569, 257);
-            this.labelRiderID.Name = "labelRiderID";
-            this.labelRiderID.Size = new System.Drawing.Size(198, 24);
-            this.labelRiderID.TabIndex = 8;
-            this.labelRiderID.Text = "*клик на таблицу 3*";
-            // 
-            // buttonAddMem
-            // 
-            this.buttonAddMem.Location = new System.Drawing.Point(569, 296);
-            this.buttonAddMem.Name = "buttonAddMem";
-            this.buttonAddMem.Size = new System.Drawing.Size(220, 35);
-            this.buttonAddMem.TabIndex = 9;
-            this.buttonAddMem.Text = "Добавить участника";
-            this.buttonAddMem.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewMemRace
-            // 
-            this.dataGridViewMemRace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMemRace.Location = new System.Drawing.Point(4, 337);
-            this.dataGridViewMemRace.Name = "dataGridViewMemRace";
-            this.dataGridViewMemRace.RowHeadersWidth = 51;
-            this.dataGridViewMemRace.RowTemplate.Height = 29;
-            this.dataGridViewMemRace.Size = new System.Drawing.Size(785, 183);
-            this.dataGridViewMemRace.TabIndex = 10;
-            // 
-            // buttonDeleteMem
-            // 
-            this.buttonDeleteMem.Location = new System.Drawing.Point(580, 536);
-            this.buttonDeleteMem.Name = "buttonDeleteMem";
-            this.buttonDeleteMem.Size = new System.Drawing.Size(209, 29);
-            this.buttonDeleteMem.TabIndex = 11;
-            this.buttonDeleteMem.Text = "Удалить участника";
-            this.buttonDeleteMem.UseVisualStyleBackColor = true;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 658);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlMem);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlMem.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNo)).EndInit();
@@ -632,17 +662,17 @@ namespace Hippodrome
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRace)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpRace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemHorse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemRider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemHorse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpRace)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlMem;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxlogin;

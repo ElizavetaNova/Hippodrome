@@ -18,6 +18,9 @@ namespace Hippodrome
         int ClientIDAdmin;
         int DeleteUser = 0;
         int RaceNumber=0;
+        int RaceUpNumber = 0;
+        int HorseMemNumber = 0;
+        int RiderMemID = 0;
         string conect = "Data Source=ElizavetaLaptop;Initial Catalog=hippodrome;Integrated Security=True;";
         hippodromeContext context = new hippodromeContext();
         public Admin()
@@ -46,7 +49,6 @@ namespace Hippodrome
             dataGridViewUsers.Columns["ClientID"].ReadOnly = true;
             dataGridViewUsers.Columns["Role"].ReadOnly = true;
             dataGridViewUsers.Columns["Login"].ReadOnly = true;
-            //dataGridViewUsers.Columns["Login"].ToString().Trim();
             dataGridViewUsers.Columns["Client"].Visible = false;
             dataGridViewUsers.AllowUserToDeleteRows = true;
             dataGridViewUsers.AllowUserToAddRows = true;
@@ -68,6 +70,8 @@ namespace Hippodrome
             dataGridViewRace.Columns["RaceDuration"].HeaderText = "Время";
 
             //buttonDeleteUserClient.Visible = false;
+
+
         }
 
         private void dataGridViewUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -329,5 +333,115 @@ namespace Hippodrome
             else
                 MessageBox.Show("Выберите заезд для удаления");
         }
+
+        private void tabControlMem_Layout(object sender, LayoutEventArgs e)
+        {
+            using (var connection = new SqlConnection(conect))
+            {
+                connection.Open();
+                SqlCommand comm = connection.CreateCommand();
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "UpcommingRaces";
+                DataTable dt = new DataTable();
+                dt.Load(comm.ExecuteReader());                
+                dataGridViewUpRace.DataSource = dt.DefaultView;
+                dataGridViewUpRace.Columns["RaceNumber"].HeaderText = "№ заезда";
+                dataGridViewUpRace.Columns["RaceDate"].HeaderText = "Дата заезда";
+
+                context.HorseTables.Load();
+                dataGridViewMemHorse.DataSource = context.HorseTables.ToList();
+                dataGridViewMemHorse.Columns["HorseNumber"].HeaderText = "№";
+                dataGridViewMemHorse.Columns["HorseName"].HeaderText = "Кличка";
+                dataGridViewMemHorse.Columns["HorseColor"].Visible = false;
+                dataGridViewMemHorse.Columns["HorseRideCount"].Visible = false;
+                dataGridViewMemHorse.Columns["HorseWinCount"].Visible = false;
+                dataGridViewMemHorse.Columns["HorseAge"].HeaderText = "Возраст";
+                dataGridViewMemHorse.Columns["Coefficient"].Visible = false;
+                dataGridViewMemHorse.Columns["BettingTables"].Visible = false;
+                dataGridViewMemHorse.Columns["MembersRaceTables"].Visible = false;
+
+                context.RiderTables.Load();
+                dataGridViewMemRider.DataSource = context.RiderTables.ToList();
+                dataGridViewMemRider.Columns["RiderID"].HeaderText = "№";
+                dataGridViewMemRider.Columns["RiderSurname"].HeaderText = "Фамилия";
+                dataGridViewMemRider.Columns["RiderName"].HeaderText = "Имя";
+                dataGridViewMemRider.Columns["RiderMiddleName"].HeaderText = "Отчество";
+                dataGridViewMemRider.Columns["Master"].HeaderText = "Мастерство";
+                dataGridViewMemRider.Columns["RiderAge"].Visible = false;
+                dataGridViewMemRider.Columns["MembersRaceTables"].Visible = false;
+
+                
+
+                connection.Close();
+            }
+        }
+
+        private void dataGridViewUpRace_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            RaceUpNumber = (int)dataGridViewUpRace[0, row].Value;
+            labelRaceNumber.Text = RaceUpNumber.ToString();
+
+            using (var connection = new SqlConnection(conect))
+            {
+                connection.Open();
+                SqlCommand comm = connection.CreateCommand();
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "MembersUpcommingRace";
+                comm.Parameters.AddWithValue("@RaceNumber", RaceUpNumber);
+                DataTable dt = new DataTable();
+                dt.Load(comm.ExecuteReader());
+                dataGridViewMemRace.DataSource = dt.DefaultView;
+            }
+        }
+
+        private void dataGridViewMemHorse_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            HorseMemNumber = (int)dataGridViewMemHorse[0, row].Value;
+            labelHorseNumber.Text = HorseMemNumber.ToString();
+        }
+
+        private void dataGridViewMemRider_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            RiderMemID = (int)dataGridViewMemRider[0, row].Value;
+            labelRiderID.Text = RiderMemID.ToString(); 
+        }
+
+        private void buttonAddMem_Click(object sender, EventArgs e)
+        {
+            if ((RaceUpNumber != 0) && (HorseMemNumber !=0 ) && (RiderMemID != 0))
+            {
+                using (var connection = new SqlConnection(conect))
+                {                    
+                    connection.Open();
+                    using (var command = new SqlCommand("insert into MembersRace_table (RaceNumber, HorseNumber, RiderNumber) values (@RaceUpNumber, @HorseMemNumber, @RiderMemID)", connection))
+                    {
+                        command.Parameters.AddWithValue("@RaceUpNumber", RaceUpNumber);
+                        command.Parameters.AddWithValue("@HorseMemNumber", HorseMemNumber);
+                        command.Parameters.AddWithValue("@RiderMemID", RiderMemID);
+
+                        try
+                        {
+                            using (var dataReader = command.ExecuteReader())
+                            {
+                                dataReader.Close();
+                            }
+                            logging("Добавлен новый участник заезда");
+
+                            Admin_Load(sender, e);
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Ошибка. Данные наездник или лошадь уже участвуют в данном заезде.");
+
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+        }
     }
+    
 }
